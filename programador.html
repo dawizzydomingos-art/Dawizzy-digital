@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Portfólio Animado</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #0f0c29, #302b63, #24243e);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10%;
+    }
+
+    .hero-text {
+      max-width: 500px;
+      animation: slideIn 1.2s ease forwards;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      opacity: 0.85;
+    }
+
+    .hero-text button {
+      margin-top: 30px;
+      padding: 14px 32px;
+      border: none;
+      border-radius: 30px;
+      background: #7f5af0;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .hero-text button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .hero-image {
+      width: 320px;
+      height: 420px;
+      border-radius: 30px;
+      background: url("IMG-20250213-WA0012.jpg") center/cover no-repeat;
+      animation: float 4s ease-in-out infinite;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    }
+
+    section {
+      padding: 120px 10%;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about div {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: 0.8s ease;
+    }
+
+    .about div.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.08);
+      padding: 30px;
+      border-radius: 25px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    }
+
+    footer {
+      padding: 40px;
+      text-align: center;
+      opacity: 0.6;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-60px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+.social-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.social-container a {
+  width: 50px;
+  height: 50px;
+  background: #222;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-container a:hover {
+  transform: scale(1.1);
+}
+
+/* Cores no hover */
+.facebook:hover {
+  background: #1877f2;
+}
+
+.instagram:hover {
+  background: #e1306c;
+}
+
+.whatsapp:hover {
+  background: #25d366;
+}
+
+.tiktok:hover {
+  background: #000;
+}
+
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="hero-text">
+    <h1>ABDULLAH ABDUL</h1>
+    <p>Desenvolvedor de sites web.</p>
+    <button onclick="document.querySelector('#about').scrollIntoView({behavior:'smooth'})">
+      Conheça mais
+    </button>
+  </div>
+
+
+  <div class="hero-image"></div>
+</header>
+
+<div class="social-container">
+  <a href="https://www.facebook.com/people/Lordy-Maximus-Slamm/61554116330002/" target="_blank" class="facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <a href="https://www.instagram.com/dawizzy7b/" target="_blank" class="instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a href="https://wa.me/+258869894030" target="_blank" class="whatsapp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <a href="https://www.tiktok.com/@dawizzyofc" target="_blank" class="tiktok">
+    <i class="fab fa-tiktok"></i>
+  </a>
+</div>
+
+<section id="about">
+  <div class="about">
+    <div>
+      <h2>Sobre Mim</h2>
+      <p>
+        Sou programador em constante evolução, com experiência prática no desenvolvimento de projetos web. Trabalho com HTML, CSS e JavaScript, criando interfaces funcionais, organizadas e modernas. Ao longo do tempo, desenvolvi projetos que fortaleceram minha lógica de programação e boas práticas. Tenho facilidade para aprender, me adaptar a desafios e evoluir continuamente na área de tecnologia.
+      </p>
+    </div>
+
+    <div>
+      <h2>Habilidades</h2>
+      <p>HTML • CSS • JavaScript • Design • Criatividade</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 style="margin-bottom:40px">Projetos</h2>
+  <div class="projects">
+    <div class="card"><a href="radio.html" style="text-decoration: none; color: white;"> SOBRE A RADIO </a></div>
+    <div class="card"><a href="completo.html" style="text-decoration: none; color: white;" >Projecto Comunitaria de Apoio</a>
+</div>
+    <div class="card">Projeto 3</div>
+  </div>
+</section>
+
+<footer>
+  © 2026 • ABDULLAH ABDUL 
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  });
+
+  document.querySelectorAll('.about div').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
